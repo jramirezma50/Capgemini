@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Juan Ramírez",
+    "puesto": "Lead DevOps Engineer",
+    "email": "juan.ramirez@capgemini.com",
+    "experiencia": 5,
+    "skills": ["Terraform", "AWS", "Docker", "Kubernetes", "Python"],
+    "bio": "Especialista en infraestructura en la nube con más de 5 años de experiencia en AWS y Terraform.",
+    "foto": "https://via.placeholder.com/150/667eea/ffffff?text=JR"
+  },
+  {
+    "id": 2,
+    "nombre": "María García",
+    "puesto": "Senior Cloud Architect",
+    "email": "maria.garcia@capgemini.com",
+    "experiencia": 6,
+    "skills": ["AWS", "Architecture", "Security", "CloudFormation", "Terraform"],
+    "bio": "Diseña y gestiona arquitecturas cloud complejas. Experta en escalabilidad y seguridad.",
+    "foto": "https://via.placeholder.com/150/764ba2/ffffff?text=MG"
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos López",
+    "puesto": "Infrastructure Engineer",
+    "email": "carlos.lopez@capgemini.com",
+    "experiencia": 4,
+    "skills": ["Terraform", "Jenkins", "GitLab CI", "Python", "Bash"],
+    "bio": "Implementa soluciones de infraestructura robustas. Especialista en automatización y CI/CD.",
+    "foto": "https://via.placeholder.com/150/ff6b6b/ffffff?text=CL"
+  },
+  {
+    "id": 4,
+    "nombre": "Ana Martínez",
+    "puesto": "DevOps Engineer",
+    "email": "ana.martinez@capgemini.com",
+    "experiencia": 5,
+    "skills": ["Docker", "Prometheus", "ELK Stack", "Grafana", "Kubernetes"],
+    "bio": "Optimiza procesos de deployment y monitoreo. Experta en observabilidad y alertas.",
+    "foto": "https://via.placeholder.com/150/51cf66/ffffff?text=AM"
+  },
+  {
+    "id": 5,
+    "nombre": "Roberto Fernández",
+    "puesto": "Network Engineer",
+    "email": "roberto.fernandez@capgemini.com",
+    "experiencia": 7,
+    "skills": ["VPC", "Networking", "Security Groups", "AWS Route53", "Load Balancing"],
+    "bio": "Gestiona configuraciones de red, seguridad y conectividad. Especialista en VPC y routing.",
+    "foto": "https://via.placeholder.com/150/ffd43b/ffffff?text=RF"
+  },
+  {
+    "id": 6,
+    "nombre": "Laura Sánchez",
+    "puesto": "Security Specialist",
+    "email": "laura.sanchez@capgemini.com",
+    "experiencia": 5,
+    "skills": ["AWS Security", "IAM", "Compliance", "Encryption", "Pentesting"],
+    "bio": "Asegura que la infraestructura cumpla con estándares de seguridad. Realiza auditorías y pentesting.",
+    "foto": "https://via.placeholder.com/150/a78bfa/ffffff?text=LS"
+  }
+]

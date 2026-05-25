@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Servidor web principal - Puerto 8000
+  web:
+    build: .
+    container_name: capgemini-web
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./index.html:/app/index.html
+      - ./team.html:/app/team.html
+      - ./styles.css:/app/styles.css
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - capgemini-network
+
+  # Servidor de datos (gente) - Puerto 8001
+  team-api:
+    image: python:3.11-slim
+    container_name: capgemini-team-api
+    working_dir: /app
+    command: python -m http.server 8001 --directory /app/data
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - capgemini-network
+
+networks:
+  capgemini-network:
+    driver: bridge

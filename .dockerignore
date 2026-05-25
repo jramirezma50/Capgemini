@@ -1,0 +1,65 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Directorios de Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# Directorios de desarrollo
+node_modules/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Archivos de compilación
+dist/
+build/
+*.egg
+
+# Logs
+*.log
+logs/
+
+# Documentación
+docs/
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+Dockerfile.dev
+
+# Scripts
+scripts/test.sh
+scripts/debug.sh
+
+# README y otros
+README.md
+LICENSE
+CHANGELOG.md
