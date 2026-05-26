@@ -3,101 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capgemini - Proyecto Terraform</title>
+    <title>Capgemini - Infraestructura en AWS con Terraform & Docker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🚀 Capgemini</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#terraform">Terraform</a></li>
+                <li><a href="#docker">Docker</a></li>
+                <li><a href="#integracion">Integración</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1>🚀 Capgemini</h1>
-            <p class="subtitle">Proyecto de Infraestructura con Terraform</p>
+        <!-- HEADER HERO -->
+        <header class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>🏗️ Infraestructura Moderna en la Nube</h1>
+                <p class="hero-subtitle">Terraform + AWS + Docker = Escalabilidad y Automatización</p>
+                <p class="hero-desc">Proyecto profesional de Infrastructure as Code (IaC) con múltiples ambientes y mejores prácticas DevOps</p>
+                <div class="hero-buttons">
+                    <button onclick="scrollToSection('terraform')" class="btn btn-primary">Aprende Terraform</button>
+                    <button onclick="scrollToSection('docker')" class="btn btn-secondary">Aprende Docker</button>
+                </div>
+            </div>
         </header>
 
         <div class="content">
-            <h2>¿Qué es este proyecto?</h2>
-            <p>
-                Este es un proyecto completo de Terraform diseñado para gestionar infraestructura en AWS 
-                de manera profesional y escalable. Incluye configuraciones para múltiples ambientes y 
-                mejores prácticas de DevOps.
-            </p>
-
-            <h2>✨ Características Principales</h2>
-            <div class="features">
-                <div class="feature-box">
-                    <h3>Multi-Ambiente</h3>
-                    <p>Configuraciones separadas para dev, staging y producción</p>
+            <!-- CARACTERÍSTICAS -->
+            <section class="section">
+                <h2>✨ Características Principales</h2>
+                <div class="features">
+                    <div class="feature-box">
+                        <span class="feature-icon">🌐</span>
+                        <h3>Multi-Ambiente</h3>
+                        <p>Configuraciones automáticas para dev, staging y producción</p>
+                    </div>
+                    <div class="feature-box">
+                        <span class="feature-icon">🔒</span>
+                        <h3>Seguridad</h3>
+                        <p>VPC, Security Groups y configuración de firewalls</p>
+                    </div>
+                    <div class="feature-box">
+                        <span class="feature-icon">📈</span>
+                        <h3>Escalabilidad</h3>
+                        <p>Auto-scaling y balanceadores de carga integrados</p>
+                    </div>
+                    <div class="feature-box">
+                        <span class="feature-icon">📊</span>
+                        <h3>Monitoreo</h3>
+                        <p>CloudWatch y logs centralizados para análisis</p>
+                    </div>
                 </div>
-                <div class="feature-box">
-                    <h3>VPC Completa</h3>
-                    <p>Red virtual con subnets públicas y privadas</p>
-                </div>
-                <div class="feature-box">
-                    <h3>EC2 Instances</h3>
-                    <p>Instancias escalables con monitoreo integrado</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Security Groups</h3>
-                    <p>Configuración segura de firewalls</p>
-                </div>
-            </div>
+            </section>
 
-            <h2>🛠️ Stack Tecnológico</h2>
-            <ul>
-                <li><strong>Terraform</strong> - Infrastructure as Code</li>
-                <li><strong>AWS</strong> - Proveedor de nube</li>
-                <li><strong>EC2</strong> - Instancias de computación</li>
-                <li><strong>VPC</strong> - Red privada virtual</li>
-                <li><strong>CloudWatch</strong> - Monitoreo y logs</li>
-                <li><strong>Docker</strong> - Containerización de aplicaciones</li>
-            </ul>
+            <!-- TERRAFORM EXPLICADO -->
+            <section class="section" id="terraform">
+                <h2>📚 Entendiendo Terraform</h2>
+                
+                <div class="info-box">
+                    <h3>¿Qué es Terraform?</h3>
+                    <p>
+                        <strong>Terraform</strong> es una herramienta de Infrastructure as Code (IaC) creada por HashiCorp. 
+                        Permite definir, previsualizar y gestionar tu infraestructura en la nube de manera declarativa.
+                    </p>
+                    <p>
+                        En lugar de hacer clic en la consola de AWS, escribes código que describe la infraestructura que quieres, 
+                        y Terraform se encarga de crearla, modificarla o destruirla automáticamente.
+                    </p>
+                </div>
 
-            <h2>📋 Estructura del Proyecto</h2>
-            <div class="code-block">
-├── provider.tf           # Configuración del proveedor AWS<br/>
-├── main.tf              # Recursos principales<br/>
-├── variables.tf         # Variables de entrada<br/>
-├── outputs.tf           # Valores de salida<br/>
-├── environments/        # Configuraciones por ambiente<br/>
-│   ├── dev/            # Desarrollo<br/>
-│   ├── staging/        # Pruebas<br/>
-│   └── prod/           # Producción<br/>
-├── scripts/            # Scripts de usuario<br/>
-├── Makefile            # Comandos útiles<br/>
-└── .gitignore          # Archivos excluidos de git
-            </div>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4>📝 Declarativo (No Imperativo)</h4>
+                        <p><strong>Declarativo:</strong> "Quiero 3 instancias EC2"</p>
+                        <p><strong>Imperativo:</strong> "Crea instancia 1, luego 2, luego 3"</p>
+                        <p>Terraform es declarativo, más simple y seguro</p>
+                    </div>
 
-            <h2>🚀 Comandos Útiles</h2>
-            <div class="code-block">
-# Inicializar Terraform<br/>
-make init<br/>
+                    <div class="concept-card">
+                        <h4>🔄 Idempotencia</h4>
+                        <p>Ejecutar el mismo código 10 veces da el mismo resultado</p>
+                        <p>Terraform verifica el estado actual y solo hace cambios necesarios</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>📦 Proveedores (Providers)</h4>
+                        <p>Terraform soporta múltiples proveedores:</p>
+                        <p>AWS, Azure, GCP, Kubernetes, Docker, etc.</p>
+                        <p>Misma sintaxis para cualquier proveedor</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>💾 State File (archivo de estado)</h4>
+                        <p>Terraform guarda el estado en un archivo (.tfstate)</p>
+                        <p>Contiene info de recursos creados</p>
+                        <p>Se usa para detectar cambios y hacer updates</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Estructura de Archivos Terraform</h3>
+                <div class="code-block">
+<strong># 1. provider.tf - Configuración del proveedor</strong><br/>
+terraform {<br/>
+&nbsp;&nbsp;required_providers {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;aws = {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source = "hashicorp/aws"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version = "~> 5.0"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
 <br/>
-# Planificar cambios<br/>
-make plan ENVIRONMENT=dev<br/>
+provider "aws" {<br/>
+&nbsp;&nbsp;region = var.aws_region<br/>
+}<br/>
+                </div>
+
+                <div class="code-block">
+<strong># 2. variables.tf - Define variables de entrada</strong><br/>
+variable "vpc_cidr" {<br/>
+&nbsp;&nbsp;description = "CIDR block para la VPC"<br/>
+&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= string<br/>
+&nbsp;&nbsp;default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "10.0.0.0/16"<br/>
+}<br/>
+<br/>
+variable "instance_count" {<br/>
+&nbsp;&nbsp;description = "Número de instancias EC2"<br/>
+&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= number<br/>
+&nbsp;&nbsp;default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 2<br/>
+}<br/>
+                </div>
+
+                <div class="code-block">
+<strong># 3. main.tf - Define recursos</strong><br/>
+resource "aws_vpc" "main" {<br/>
+&nbsp;&nbsp;cidr_block = var.vpc_cidr<br/>
+&nbsp;&nbsp;tags = {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Name = "capgemini-vpc"<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+resource "aws_instance" "web" {<br/>
+&nbsp;&nbsp;count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= var.instance_count<br/>
+&nbsp;&nbsp;ami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "ami-0c55b159cbfafe1f0"<br/>
+&nbsp;&nbsp;instance_type&nbsp;= "t3.micro"<br/>
+}<br/>
+                </div>
+
+                <div class="code-block">
+<strong># 4. outputs.tf - Define valores de salida</strong><br/>
+output "vpc_id" {<br/>
+&nbsp;&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= aws_vpc.main.id<br/>
+&nbsp;&nbsp;description = "ID de la VPC creada"<br/>
+}<br/>
+<br/>
+output "instance_ips" {<br/>
+&nbsp;&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= aws_instance.web[*].public_ip<br/>
+&nbsp;&nbsp;description = "IPs públicas de las instancias"<br/>
+}<br/>
+                </div>
+
+                <h3 style="margin-top: 30px;">Ciclo de vida de Terraform</h3>
+                <div class="lifecycle">
+                    <div class="lifecycle-step">
+                        <span class="step-number">1</span>
+                        <h4>terraform init</h4>
+                        <p>Descarga proveedores y prepara directorio</p>
+                    </div>
+                    <div class="lifecycle-arrow">→</div>
+                    <div class="lifecycle-step">
+                        <span class="step-number">2</span>
+                        <h4>terraform plan</h4>
+                        <p>Muestra qué cambios se harán (preview)</p>
+                    </div>
+                    <div class="lifecycle-arrow">→</div>
+                    <div class="lifecycle-step">
+                        <span class="step-number">3</span>
+                        <h4>terraform apply</h4>
+                        <p>Ejecuta los cambios en AWS</p>
+                    </div>
+                    <div class="lifecycle-arrow">→</div>
+                    <div class="lifecycle-step">
+                        <span class="step-number">4</span>
+                        <h4>terraform destroy</h4>
+                        <p>Elimina todos los recursos (cuando no los necesites)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DOCKER EXPLICADO -->
+            <section class="section" id="docker">
+                <h2>🐳 Entendiendo Docker</h2>
+                
+                <div class="info-box">
+                    <h3>¿Qué es Docker?</h3>
+                    <p>
+                        <strong>Docker</strong> es una plataforma de containerización que empaqueta tu aplicación 
+                        con todas sus dependencias en un "contenedor" aislado y portátil.
+                    </p>
+                    <p>
+                        Piénsalo como una caja hermética: tu app funciona igual en tu computadora, en staging, en producción, 
+                        en cualquier lugar. No hay más "funciona en mi máquina pero no en el servidor".
+                    </p>
+                </div>
+
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4>🏗️ Imagen vs Contenedor</h4>
+                        <p><strong>Imagen:</strong> Plano/plantilla (como una clase)</p>
+                        <p><strong>Contenedor:</strong> Instancia en ejecución (como un objeto)</p>
+                        <p>Construyes la imagen una vez, ejecutas muchos contenedores de ella</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>📦 Capas (Layers)</h4>
+                        <p>Las imágenes se construyen en capas</p>
+                        <p>Cada comando en el Dockerfile es una capa</p>
+                        <p>Docker cachea capas para builds más rápidos</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🌐 Aislamiento</h4>
+                        <p>Cada contenedor tiene su propio:</p>
+                        <p>Sistema de archivos, red, procesos</p>
+                        <p>No interfieren entre sí</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>📡 Orquestación con Docker Compose</h4>
+                        <p>Ejecuta múltiples contenedores como un sistema</p>
+                        <p>Define servicios, redes, volúmenes en YAML</p>
+                        <p>Un comando para iniciar todo: docker-compose up</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Archivo Dockerfile Explicado</h3>
+                <div class="code-block">
+<strong># Dockerfile - Receta para construir una imagen</strong><br/>
+FROM python:3.11-slim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Imagen base (sistema operativo)<br/>
+<br/>
+WORKDIR /app&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Directorio de trabajo en el contenedor<br/>
+<br/>
+COPY index.html .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Copia archivos desde tu máquina al contenedor<br/>
+COPY styles.css .<br/>
+<br/>
+EXPOSE 8000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Expone puerto 8000<br/>
+<br/>
+CMD ["python", "-m", "http.server", "8000"]&nbsp;&nbsp;# Comando a ejecutar al iniciar<br/>
+                </div>
+
+                <h3 style="margin-top: 30px;">Archivo docker-compose.yml Explicado</h3>
+                <div class="code-block">
+<strong># docker-compose.yml - Orquesta múltiples contenedores</strong><br/>
+version: '3.8'<br/>
+<br/>
+services:<br/>
+&nbsp;&nbsp;web:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Nombre del servicio<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;build: .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Construir desde Dockerfile<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ports:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "8000:8000"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Puerto local:contenedor<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;volumes:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./index.html:/app/index.html&nbsp;&nbsp;&nbsp;&nbsp;# Sincroniza archivos<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;environment:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- PYTHONUNBUFFERED=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Variables de entorno<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;restart: unless-stopped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Reinicia si falla<br/>
+<br/>
+&nbsp;&nbsp;team-api:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Otro servicio<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image: python:3.11-slim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Usa imagen existente<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ports:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "8001:8001"<br/>
+<br/>
+networks:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Red personalizada<br/>
+&nbsp;&nbsp;capgemini-network:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;driver: bridge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Permite que los contenedores se comuniquen<br/>
+                </div>
+            </section>
+
+            <!-- INTEGRACIÓN TERRAFORM + DOCKER -->
+            <section class="section" id="integracion">
+                <h2>🔗 Integración: Terraform + Docker + AWS</h2>
+                
+                <div class="integration-diagram">
+                    <div class="diagram-box">
+                        <h4>1️⃣ Docker Compose (Local)</h4>
+                        <p>Ejecuta la app localmente en contenedores</p>
+                        <code>docker-compose up</code>
+                    </div>
+                    <div class="diagram-arrow">⬇️</div>
+                    <div class="diagram-box">
+                        <h4>2️⃣ Terraform (Infraestructura AWS)</h4>
+                        <p>Crea VPC, EC2, Security Groups, Redes</p>
+                        <code>terraform apply</code>
+                    </div>
+                    <div class="diagram-arrow">⬇️</div>
+                    <div class="diagram-box">
+                        <h4>3️⃣ Docker en EC2 (Producción)</h4>
+                        <p>Los contenedores corren en las instancias EC2</p>
+                        <code>docker pull && docker run</code>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Workflow Completo</h3>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <h4>📝 Paso 1: Desarrollar Localmente</h4>
+                        <div class="code-block">
+# Ejecutar con Docker Compose en tu máquina<br/>
+docker-compose up -d<br/>
+<br/>
+# Visita http://localhost:8000<br/>
+# Tu app se ejecuta en contenedores aislados<br/>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <h4>📋 Paso 2: Definir Infraestructura con Terraform</h4>
+                        <div class="code-block">
+# En main.tf defines la infraestructura<br/>
+resource "aws_instance" "web" {<br/>
+&nbsp;&nbsp;ami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "ami-0c55b159cbfafe1f0"<br/>
+&nbsp;&nbsp;instance_type&nbsp;= "t3.micro"<br/>
+&nbsp;&nbsp;key_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= aws_key_pair.deployer.key_name<br/>
+&nbsp;&nbsp;user_data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= file("${path.module}/scripts/user_data.sh")<br/>
+}<br/>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <h4>🚀 Paso 3: Crear Infraestructura</h4>
+                        <div class="code-block">
+# Inicializar Terraform<br/>
+terraform init<br/>
+<br/>
+# Ver cambios que se harán<br/>
+terraform plan -var-file=environments/dev/terraform.tfvars<br/>
+<br/>
+# Aplicar cambios (crear instancias en AWS)<br/>
+terraform apply -var-file=environments/dev/terraform.tfvars<br/>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <h4>📦 Paso 4: Ejecutar Docker en las Instancias</h4>
+                        <div class="code-block">
+# El script user_data.sh (ejecutado automáticamente) instala:<br/>
+# - Docker<br/>
+# - Docker Compose<br/>
+# - Tu aplicación<br/>
+# - Inicia los contenedores<br/>
+<br/>
+# Resultado: Tu app ejecutándose en AWS en contenedores<br/>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Ambientes Multi-Tenant</h3>
+                <div class="environments">
+                    <div class="env-box">
+                        <h4>🧪 Development (dev)</h4>
+                        <ul>
+                            <li>Instancia: t3.micro</li>
+                            <li>Cantidad: 1</li>
+                            <li>Costo: Bajo</li>
+                            <li>Propósito: Desarrollo y pruebas rápidas</li>
+                        </ul>
+                    </div>
+                    <div class="env-box">
+                        <h4>⚙️ Staging</h4>
+                        <ul>
+                            <li>Instancia: t3.small</li>
+                            <li>Cantidad: 2</li>
+                            <li>Costo: Medio</li>
+                            <li>Propósito: Pruebas pre-producción</li>
+                        </ul>
+                    </div>
+                    <div class="env-box">
+                        <h4>🔒 Production (prod)</h4>
+                        <ul>
+                            <li>Instancia: t3.medium</li>
+                            <li>Cantidad: 3+</li>
+                            <li>Costo: Alto</li>
+                            <li>Propósito: Usuarios finales, Alta disponibilidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMANDOS ÚTILES -->
+            <section class="section">
+                <h2>⚡ Comandos Útiles</h2>
+                
+                <h3>Docker Compose</h3>
+                <div class="code-block">
+# Iniciar contenedores en segundo plano<br/>
+docker-compose up -d<br/>
+<br/>
+# Ver logs en tiempo real<br/>
+docker-compose logs -f<br/>
+<br/>
+# Detener contenedores<br/>
+docker-compose down<br/>
+<br/>
+# Listar contenedores corriendo<br/>
+docker-compose ps<br/>
+<br/>
+# Ejecutar comando en contenedor<br/>
+docker-compose exec web bash<br/>
+                </div>
+
+                <h3>Terraform</h3>
+                <div class="code-block">
+# Inicializar proyecto Terraform<br/>
+terraform init<br/>
+<br/>
+# Validar sintaxis<br/>
+terraform validate<br/>
+<br/>
+# Ver plan de cambios<br/>
+terraform plan<br/>
 <br/>
 # Aplicar cambios<br/>
-make apply ENVIRONMENT=dev<br/>
+terraform apply<br/>
 <br/>
 # Destruir infraestructura<br/>
-make destroy ENVIRONMENT=dev<br/>
+terraform destroy<br/>
 <br/>
-# Validar configuración<br/>
-make validate
-            </div>
+# Ver estado actual<br/>
+terraform show<br/>
+                </div>
 
-            <h2>📊 Ambientes Disponibles</h2>
-            <ul>
-                <li><strong>Development (dev):</strong> t3.micro, 1 instancia</li>
-                <li><strong>Staging:</strong> t3.small, 2 instancias</li>
-                <li><strong>Production (prod):</strong> t3.medium, 3 instancias</li>
-            </ul>
+                <h3>AWS CLI (Verificación)</h3>
+                <div class="code-block">
+# Ver identidad conectada<br/>
+aws sts get-caller-identity<br/>
+<br/>
+# Listar instancias EC2<br/>
+aws ec2 describe-instances<br/>
+<br/>
+# Listar VPCs<br/>
+aws ec2 describe-vpcs<br/>
+                </div>
+            </section>
 
-            <h2>🐳 Docker & Contenedores</h2>
-            <p>
-                Este proyecto ahora está completamente containerizado. Puedes ejecutar la infraestructura 
-                completa usando Docker y Docker Compose.
-            </p>
-            <div class="code-block">
-# Compilar imagen Docker<br/>
+            <!-- VENTAJAS -->
+            <section class="section">
+                <h2>💡 Ventajas de esta Arquitectura</h2>
+                <div class="advantages">
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Reproducible</h4>
+                        <p>Mismo código = Mismo resultado siempre. Fácil replicar ambientes.</p>
+                    </div>
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Versionable</h4>
+                        <p>Tu infraestructura está en Git. Puedes ver histórico de cambios.</p>
+                    </div>
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Escalable</h4>
+                        <p>Cambiar de 1 a 10 instancias es solo modificar un número.</p>
+                    </div>
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Portable</h4>
+                        <p>Docker funciona en cualquier lugar. Tu app es agnóstica del ambiente.</p>
+                    </div>
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Automatizado</h4>
+                        <p>No necesitas hacer clic en AWS. Todo se automatiza.</p>
+                    </div>
+                    <div class="advantage">
+                        <span class="advantage-icon">✅</span>
+                        <h4>Económico</h4>
+                        <p>Pagas solo lo que usas. Fácil destruir recursos cuando no los necesitas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>© 2026 Capgemini - Proyecto de Infraestructura Moderna</p>
+                <p>Terraform + AWS + Docker + Python</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
 docker build -t capgemini-web .<br/>
 <br/>
 # Ejecutar con Docker Compose<br/>
